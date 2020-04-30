@@ -7,7 +7,7 @@ export const devices = [
     screenRatio: "long",
     xDimension: 960,
     yDimension: 540,
-    screenRatio: "long",
-    filePath: "",
+    githubPath:
+      "https://github.com/ugglr/android-virtual-devices/blob/master/samsung/samsung_j2.xml",
   },
 ];

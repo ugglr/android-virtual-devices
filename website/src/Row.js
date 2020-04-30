@@ -1,8 +1,4 @@
 import React from "react";
-import styled from "styled-components";
-
-const RowContainer = styled.div``;
-const BrandText = styled.text``;
 
 /* ############ PROPS ##############
     brand: eg. "Samsung" || "Huawei" || "Google" etc.,
@@ -13,25 +9,31 @@ const BrandText = styled.text``;
     xDimension: eg. 960,
     yDimension: eg. 540,
     screenRatio: eg. "long",
-    filePath: "",
+    githubPath: "",
 */
 
 function Row(props) {
-  const {
-    brand,
-    model,
-    diagonalLength,
-    pixelDensity,
-    xDimension,
-    yDimension,
-    screenRatio,
-    filePath,
-  } = props;
+  console.log("ROW PROPS", props);
+  const values = Object.values(props);
+
+  console.log("Row values", values);
+  console.log("Values length", values.length);
 
   return (
-    <RowContainer>
-      <BrandText>{brand}</BrandText>
-    </RowContainer>
+    <tr>
+      {values.map((value, i) => {
+        console.log(i);
+        if (i === values.length - 1) {
+          console.log("Returning Link");
+          return (
+            <td>
+              <a>Link</a>
+            </td>
+          );
+        }
+        return <td>{value}</td>;
+      })}
+    </tr>
   );
 }
 
