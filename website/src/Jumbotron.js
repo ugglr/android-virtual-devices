@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { FaAndroid } from "react-icons/fa";
 
+import { GREEN } from "./theme/colors";
+
 const JumboContainer = styled.div`
   height: 25rem;
   width: 100%;
@@ -12,14 +14,21 @@ const JumboContainer = styled.div`
 `;
 const AndroidIcon = styled(FaAndroid)`
   font-size: 10rem;
+  color: ${GREEN};
+`;
+const Title = styled.h1`
+  font-weight: 600;
+`;
+const Subtitle = styled.h3`
+  color: #524d4d;
 `;
 
 function Jumbotron() {
   return (
     <JumboContainer>
       <AndroidIcon />
-      <h1>Android Virtual Devices</h1>
-      <h3>Powered by open-source.</h3>
+      <Title>Android Virtual Devices</Title>
+      <Subtitle>Powered by open-source.</Subtitle>
     </JumboContainer>
   );
 }

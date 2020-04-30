@@ -5,22 +5,20 @@ import Row from "./Row";
 import { devices } from "./devices";
 
 const TableContainer = styled.table`
-  width: 100%;
+  width: 550px;
   display: table;
-  padding: 8px 16px;
+  padding: 12px 24px;
   border-radius: 50px;
   background: #ffffff;
   box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
 `;
 
 const columnTitles = [
-  "brand",
-  "model",
-  "diagonalLength",
-  "pixelDensity",
-  "xDimension",
-  "yDimension",
-  "screenRatio",
+  "Brand",
+  "Model",
+  "Size",
+  "Resolution",
+  "Ratio",
   "Download",
 ];
 
@@ -29,7 +27,13 @@ function DeviceTable() {
     <TableContainer>
       <tr>
         {columnTitles.map((title) => (
-          <th style={{ textAlign: "left" }}>{title}</th>
+          <th
+            style={{
+              textAlign: "left",
+            }}
+          >
+            {title}
+          </th>
         ))}
       </tr>
 

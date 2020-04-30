@@ -2,8 +2,7 @@ export const devices = [
   {
     brand: "Samsung",
     model: "J2",
-    diagonalLength: 4.7,
-    pixelDensity: "hdpi",
+    size: 4.7,
     screenRatio: "long",
     xDimension: 960,
     yDimension: 540,

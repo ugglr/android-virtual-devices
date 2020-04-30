@@ -1,39 +1,67 @@
 import React from "react";
+import styled from "styled-components";
+import { FaArrowCircleDown } from "react-icons/fa";
 
-/* ############ PROPS ##############
-    brand: eg. "Samsung" || "Huawei" || "Google" etc.,
-    model: eg. "J2" || "Pixel 2" || "Mate 20 Pro" etc.,
-    diagonalLength: eg. 4.7,
-    pixelDensity: eg. "hdpi",
-    screenRatio: eg. "long",
-    xDimension: eg. 960,
-    yDimension: eg. 540,
-    screenRatio: eg. "long",
-    githubPath: "",
-*/
+import { DARK_GREEN, GREEN } from "./theme/colors";
+
+const TableRow = styled.tr`
+  :nth-child(odd) {
+    background-color: #e4e4e4;
+  }
+`;
+const IconContainer = styled.div`
+  margin-top: 5px;
+  margin-left: 1.5rem;
+`;
+const Icon = styled(FaArrowCircleDown)`
+  font-size: 1.8rem;
+  color: ${DARK_GREEN};
+
+  :hover {
+    color: ${GREEN};
+  }
+`;
 
 function Row(props) {
-  console.log("ROW PROPS", props);
-  const values = Object.values(props);
+  const {
+    brand,
+    model,
+    size,
+    xDimension,
+    yDimension,
+    screenRatio,
+    githubPath,
+  } = props;
 
-  console.log("Row values", values);
-  console.log("Values length", values.length);
+  const Cell = ({ value, download, bold }) => {
+    const TableData = styled.td`
+      height: 60px;
+      font-size: ${() => (bold ? "17px" : "16px")};
+      font-weight: ${() => (bold ? 700 : 450)};
+    `;
+
+    if (download)
+      return (
+        <td>
+          <a href={value} target='_blank' rel='noopener noreferrer'>
+            <IconContainer>
+              <Icon />
+            </IconContainer>
+          </a>
+        </td>
+      );
+    return <TableData>{value}</TableData>;
+  };
 
   return (
-    <tr>
-      {values.map((value, i) => {
-        console.log(i);
-        if (i === values.length - 1) {
-          console.log("Returning Link");
-          return (
-            <td>
-              <a>Link</a>
-            </td>
-          );
-        }
-        return <td>{value}</td>;
-      })}
-    </tr>
+    <TableRow>
+      <Cell bold value={brand} />
+      <Cell value={model} />
+      <Cell value={`${size}"`} />
+      <Cell value={`${xDimension}x${yDimension}`} />
+      <Cell value={screenRatio} />
+      <Cell download value={githubPath} />
+    </TableRow>
   );
 }
 
