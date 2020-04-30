@@ -29,5 +29,5 @@ It's hard to find an up to date place which has downloadable hardware profiles f
 * yDimension - number of pixels in y dimension
 * githubPath - path to the hardware profile file here at github. 
 
-Send PR. 
+3. Send PR. 
 
