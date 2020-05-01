@@ -4,11 +4,7 @@ import { FaArrowCircleDown } from "react-icons/fa";
 
 import { DARK_GREEN, GREEN } from "./theme/colors";
 
-const TableRow = styled.tr`
-  :nth-child(odd) {
-    background-color: #e4e4e4;
-  }
-`;
+const TableRow = styled.tr``;
 const IconContainer = styled.div`
   margin-top: 5px;
   margin-left: 1.5rem;
