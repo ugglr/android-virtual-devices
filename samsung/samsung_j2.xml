@@ -11,8 +11,8 @@
         <d:pixel-density>hdpi</d:pixel-density>
         <d:screen-ratio>long</d:screen-ratio>
         <d:dimensions>
-          <d:x-dimension>960</d:x-dimension>
-          <d:y-dimension>540</d:y-dimension>
+          <d:x-dimension>540</d:x-dimension>
+          <d:y-dimension>960</d:y-dimension>
         </d:dimensions>
         <d:xdpi>234.35</d:xdpi>
         <d:ydpi>234.35</d:ydpi>
